@@ -1,0 +1,476 @@
+* {
+    box-sizing: border-box;
+  }
+   
+body {
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+  
+h2,
+h3 {
+  color:  rgb(65, 50, 50);
+}
+  
+footer {
+  padding: 20px;
+  color: white;
+  background-color:  rgb(65, 50, 50);
+  text-align: center;
+  font-weight: bold;
+}
+  
+nav a {
+  display: inline-block; 
+  padding: 10px 15px; 
+  border: 2px solid transparent; 
+  border-radius: 15px; 
+  transition: border-color 0.3s ease; 
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(65, 50, 50);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+  
+nav a:hover {
+  border-color: #000;
+}
+  
+#menu.active nav a {
+  padding: 12px 18px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  border-color: #000;
+  transition: all 0.3s ease; 
+}
+
+.profile header {
+  text-align: center;
+}
+
+.featured-image {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+}
+  
+.profile img {
+  max-width: 200px;
+}
+  
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 20px;
+}
+  
+.jumbotron {
+  position: relative; 
+  overflow: hidden; 
+  font-size: 20px;
+  padding: 10px;
+  background-color: #e8ddcc; 
+  text-align: center;
+  color: white;
+}
+
+.bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  z-index: 1; 
+}
+
+.jumbotron p {
+  position: relative; 
+  z-index: 2; 
+  margin-top: -40px;
+  margin-bottom: 40px;
+}
+
+.logoo-image {
+  position: relative; 
+  z-index: 2; 
+  max-width: 480px; 
+ 
+}
+
+.jumbotron::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%); 
+  z-index: 1; 
+}
+
+nav ul {
+  padding-inline: 4rem;
+  display: flex;
+  
+  gap: 2rem;
+}
+  
+nav li {
+  list-style-type: none;
+}
+  
+nav {
+  background-color: rgba(232, 221, 204, 0.8); 
+  padding: 5px;
+  position: sticky;
+  top: 0;
+}
+  
+main {
+  padding: 20px;
+  
+  display: flex;
+  gap: 1.5rem;
+}
+  
+#content {
+  flex: 5;
+  
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem 2rem;
+}
+  
+aside {
+  flex: 1;
+}
+  
+header {
+  display: inline;
+}
+
+.trending-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+  flex-direction: row-reverse; 
+}
+
+.trending-food, .trending-drink {
+  width: 45%;
+}
+
+.trending-food ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: list-item;
+}
+
+.trending-food li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  /* position: relative; */
+  overflow: hidden;
+}
+
+.trending-food li::before {
+  content: counter(list-item) ". ";
+  counter-increment: list-item;
+  font-size: 1.8rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-right: 15px;
+  /* position: relative; */
+}
+
+.trending-food li:hover {
+  background-color: #f1c40f;
+  transform: scale(1.05);
+}
+
+.trending-food img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.trending-food li:hover img {
+  transform: scale(1.1);
+}
+
+.trending-food li:hover::before {
+  color: #fff;
+}
+
+.trending-food li {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.trending-drink ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  counter-reset: list-item;
+}
+
+.trending-drink li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  cursor: pointer;
+  /* position: relative; */
+  overflow: hidden;
+}
+
+.trending-drink li::before {
+  content: counter(list-item) ". ";
+  counter-increment: list-item;
+  font-size: 1.8rem;
+  color: #e74c3c;
+  font-weight: bold;
+  margin-right: 15px;
+  /* position: relative; */
+}
+
+.trending-drink li:hover {
+  background-color: #f1c40f;
+  transform: scale(1.05);
+}
+
+.trending-drink img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-right: 15px;
+  transition: transform 0.3s ease;
+}
+
+.trending-drink li:hover img {
+  transform: scale(1.1);
+}
+
+.trending-drink li:hover::before {
+  color: #fff;
+}
+
+.trending-drink li {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+
+@media (max-width: 768px) {
+  .trending-container {
+    flex-direction: column; 
+    align-items: center;
+  }
+
+  .trending-food, .trending-drink {
+    width: 100%;
+  }
+}
+  
+#recommendation {
+  margin: 40px 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#recommendation h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e74c3c;
+  color: #f9f9f9;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #f1c40f;
+  transform: scale(1.05);
+  color: #080808;
+  font-weight: 400;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+  background-color: rgba(232, 221, 204, 0.8); 
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: rgb(65, 50, 50);
+  margin: 4px;
+  transition: all 0.3s ease;
+}
+
+/* Perangkat dengan lebar layar 1200px dan di bawahnya */
+@media screen and (max-width: 1200px) {
+  .logoo-image {
+    max-width: 80%; 
+  }
+  
+  main {
+    flex-flow: column nowrap;
+  }
+  
+  main aside {
+    align-self: center;
+  }
+}
+  
+/* Perangkat dengan lebar layar 768px dan di bawahnya */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    position: absolute;
+    top: 60px; 
+    left: -100%;
+    width: 100%;
+    background-color: rgba(232, 221, 204, 0.9); 
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+
+  nav ul.active {
+    left: 0;
+  }
+
+  nav a {
+    display: block; 
+    width: 100%; 
+    padding: 15px 0; 
+    font-size: 18px; 
+  }
+
+  .hamburger {
+    display: flex; 
+  }
+
+  .hamburger.active div:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active div:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active div:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+
+    main {
+        flex-direction: column; 
+    }
+
+    #content {
+        flex: none; 
+    }
+
+    aside {
+        flex: none; 
+        margin-top: 20px; 
+    }
+
+    .trending-container {
+        flex-direction: column; 
+        align-items: center; 
+    }
+
+    .trending-food,
+    .trending-drink {
+        width: 100%; 
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    #recommendation {
+        margin: 20px; 
+    }
+
+    #recommendation h1 {
+        font-size: 24px; 
+    }
+
+    input,
+    textarea {
+        font-size: 14px; 
+    }
+
+    button {
+        padding: 8px; 
+        font-size: 16px; 
+    }
+}
